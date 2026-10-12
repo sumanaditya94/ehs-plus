@@ -1,0 +1,6 @@
+{
+  "name": "Industrial Safety Companion",
+  "description": "Learn Safety. Work Safe. Go Home Safe. Mobile-first industrial safety learning, worker utilities, interactive PPE selector, safety calculators, salary & OT tools, chemical safety, checklists, and AI hazard scanner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
