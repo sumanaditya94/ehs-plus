@@ -56,6 +56,8 @@ import com.example.ui.viewmodel.SafetyViewModel
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 
 // -------------------------------------------------------------------------
 // 1. Worker Salary & Wage Calculator
@@ -150,6 +152,7 @@ fun WorkerSalaryCalculatorTool(
                             value = basic,
                             onValueChange = { viewModel.setSalBasic(it) },
                             label = { Text(if (isHindi) "मूल वेतन Basic (₹)" else "Basic Pay (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("salary_basic_input"),
@@ -159,6 +162,7 @@ fun WorkerSalaryCalculatorTool(
                             value = da,
                             onValueChange = { viewModel.setSalDa(it) },
                             label = { Text(if (isHindi) "महंगाई भत्ता DA (₹)" else "DA Allowance (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -171,6 +175,7 @@ fun WorkerSalaryCalculatorTool(
                             value = hra,
                             onValueChange = { viewModel.setSalHra(it) },
                             label = { Text(if (isHindi) "मकान किराया HRA (₹)" else "HRA (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -178,6 +183,7 @@ fun WorkerSalaryCalculatorTool(
                             value = allowances,
                             onValueChange = { viewModel.setSalAllowances(it) },
                             label = { Text(if (isHindi) "साइट / अन्य भत्ते (₹)" else "Other Allowances (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -190,6 +196,7 @@ fun WorkerSalaryCalculatorTool(
                             value = workingDays,
                             onValueChange = { viewModel.setSalWorkingDays(it) },
                             label = { Text(if (isHindi) "कुल कार्य दिवस" else "Month Total Days") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -197,6 +204,7 @@ fun WorkerSalaryCalculatorTool(
                             value = presentDays,
                             onValueChange = { viewModel.setSalPresentDays(it) },
                             label = { Text(if (isHindi) "उपस्थित दिन" else "Days Present") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -209,6 +217,7 @@ fun WorkerSalaryCalculatorTool(
                             value = otHours,
                             onValueChange = { viewModel.setSalOtHours(it) },
                             label = { Text(if (isHindi) "कुल ओटी घंटे (OT Hrs)" else "Total OT Hours") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -216,6 +225,7 @@ fun WorkerSalaryCalculatorTool(
                             value = otRate,
                             onValueChange = { viewModel.setSalOtRate(it) },
                             label = { Text(if (isHindi) "ओटी दर / घंटा (₹)" else "OT Rate/Hour (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -228,6 +238,7 @@ fun WorkerSalaryCalculatorTool(
                             value = pf,
                             onValueChange = { viewModel.setSalPfDeduction(it) },
                             label = { Text(if (isHindi) "पीएफ कटौती (PF ₹)" else "PF Deduction (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -235,6 +246,7 @@ fun WorkerSalaryCalculatorTool(
                             value = esi,
                             onValueChange = { viewModel.setSalEsiDeduction(it) },
                             label = { Text(if (isHindi) "ईएसआई कटौती (ESI ₹)" else "ESI Deduction (₹)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -469,6 +481,7 @@ fun WorkerOvertimeCalculatorTool(
                             value = breakMins,
                             onValueChange = { viewModel.setOtBreakMins(it) },
                             label = { Text(if (isHindi) "ब्रेक समय (Min)" else "Break (Mins)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -476,6 +489,7 @@ fun WorkerOvertimeCalculatorTool(
                             value = normalHours,
                             onValueChange = { viewModel.setOtNormalShiftHours(it) },
                             label = { Text(if (isHindi) "सामान्य शिफ्ट (Hrs)" else "Normal Shift (Hrs)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -487,6 +501,7 @@ fun WorkerOvertimeCalculatorTool(
                         value = ratePerHour,
                         onValueChange = { viewModel.setOtRatePerHour(it) },
                         label = { Text(if (isHindi) "ओटी दर / घंटा (₹/hr)" else "OT Rate Per Hour (₹/hr)") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                         modifier = Modifier.fillMaxWidth(),
                         singleLine = true
                     )
@@ -683,6 +698,7 @@ fun WorkerAttendanceLogTool(
                             value = totalDays,
                             onValueChange = { viewModel.setAttTotalDays(it) },
                             label = { Text(if (isHindi) "माह कुल दिन" else "Month Days") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -690,6 +706,7 @@ fun WorkerAttendanceLogTool(
                             value = presentDays,
                             onValueChange = { viewModel.setAttPresent(it) },
                             label = { Text(if (isHindi) "उपस्थित दिन" else "Present Days") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -702,6 +719,7 @@ fun WorkerAttendanceLogTool(
                             value = absentDays,
                             onValueChange = { viewModel.setAttAbsent(it) },
                             label = { Text(if (isHindi) "अनुपस्थित (Absent)" else "Absent Days") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -709,6 +727,7 @@ fun WorkerAttendanceLogTool(
                             value = halfDays,
                             onValueChange = { viewModel.setAttHalfDays(it) },
                             label = { Text(if (isHindi) "आधा दिन (Half Day)" else "Half Days") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -721,6 +740,7 @@ fun WorkerAttendanceLogTool(
                             value = leaves,
                             onValueChange = { viewModel.setAttLeaves(it) },
                             label = { Text(if (isHindi) "वेतनयुक्त छुट्टी (PL/CL)" else "Paid Leaves") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -728,6 +748,7 @@ fun WorkerAttendanceLogTool(
                             value = weeklyOff,
                             onValueChange = { viewModel.setAttWeeklyOff(it) },
                             label = { Text(if (isHindi) "साप्ताहिक छुट्टी (Off)" else "Weekly Off") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -740,6 +761,7 @@ fun WorkerAttendanceLogTool(
                             value = holidays,
                             onValueChange = { viewModel.setAttHolidays(it) },
                             label = { Text(if (isHindi) "त्योहार अवकाश (Holiday)" else "Festival Holidays") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
@@ -747,6 +769,7 @@ fun WorkerAttendanceLogTool(
                             value = totalOtHours,
                             onValueChange = { viewModel.setAttTotalOtHours(it) },
                             label = { Text(if (isHindi) "कुल ओटी घंटे" else "Total OT Hours") },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                             modifier = Modifier.weight(1f),
                             singleLine = true
                         )
