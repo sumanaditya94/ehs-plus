@@ -47,6 +47,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 import com.example.ui.theme.SafetyAmber
 import com.example.ui.theme.SafetyBlue
 import com.example.ui.theme.SafetyGreen
@@ -153,14 +155,16 @@ fun WorkerSalaryCalculatorTool(
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("salary_basic_input"),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = da,
                             onValueChange = { viewModel.setSalDa(it) },
                             label = { Text(if (isHindi) "महंगाई भत्ता DA (₹)" else "DA Allowance (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -172,14 +176,16 @@ fun WorkerSalaryCalculatorTool(
                             onValueChange = { viewModel.setSalHra(it) },
                             label = { Text(if (isHindi) "मकान किराया HRA (₹)" else "HRA (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = allowances,
                             onValueChange = { viewModel.setSalAllowances(it) },
                             label = { Text(if (isHindi) "साइट / अन्य भत्ते (₹)" else "Other Allowances (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -191,14 +197,16 @@ fun WorkerSalaryCalculatorTool(
                             onValueChange = { viewModel.setSalWorkingDays(it) },
                             label = { Text(if (isHindi) "कुल कार्य दिवस" else "Month Total Days") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = presentDays,
                             onValueChange = { viewModel.setSalPresentDays(it) },
                             label = { Text(if (isHindi) "उपस्थित दिन" else "Days Present") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -210,14 +218,16 @@ fun WorkerSalaryCalculatorTool(
                             onValueChange = { viewModel.setSalOtHours(it) },
                             label = { Text(if (isHindi) "कुल ओटी घंटे (OT Hrs)" else "Total OT Hours") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = otRate,
                             onValueChange = { viewModel.setSalOtRate(it) },
                             label = { Text(if (isHindi) "ओटी दर / घंटा (₹)" else "OT Rate/Hour (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -229,14 +239,16 @@ fun WorkerSalaryCalculatorTool(
                             onValueChange = { viewModel.setSalPfDeduction(it) },
                             label = { Text(if (isHindi) "पीएफ कटौती (PF ₹)" else "PF Deduction (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = esi,
                             onValueChange = { viewModel.setSalEsiDeduction(it) },
                             label = { Text(if (isHindi) "ईएसआई कटौती (ESI ₹)" else "ESI Deduction (₹)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
                 }
@@ -470,14 +482,16 @@ fun WorkerOvertimeCalculatorTool(
                             onValueChange = { viewModel.setOtBreakMins(it) },
                             label = { Text(if (isHindi) "ब्रेक समय (Min)" else "Break (Mins)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = normalHours,
                             onValueChange = { viewModel.setOtNormalShiftHours(it) },
                             label = { Text(if (isHindi) "सामान्य शिफ्ट (Hrs)" else "Normal Shift (Hrs)") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -488,7 +502,8 @@ fun WorkerOvertimeCalculatorTool(
                         onValueChange = { viewModel.setOtRatePerHour(it) },
                         label = { Text(if (isHindi) "ओटी दर / घंटा (₹/hr)" else "OT Rate Per Hour (₹/hr)") },
                         modifier = Modifier.fillMaxWidth(),
-                        singleLine = true
+                        singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                     )
                 }
             }
@@ -684,14 +699,16 @@ fun WorkerAttendanceLogTool(
                             onValueChange = { viewModel.setAttTotalDays(it) },
                             label = { Text(if (isHindi) "माह कुल दिन" else "Month Days") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = presentDays,
                             onValueChange = { viewModel.setAttPresent(it) },
                             label = { Text(if (isHindi) "उपस्थित दिन" else "Present Days") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -703,14 +720,16 @@ fun WorkerAttendanceLogTool(
                             onValueChange = { viewModel.setAttAbsent(it) },
                             label = { Text(if (isHindi) "अनुपस्थित (Absent)" else "Absent Days") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = halfDays,
                             onValueChange = { viewModel.setAttHalfDays(it) },
                             label = { Text(if (isHindi) "आधा दिन (Half Day)" else "Half Days") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -722,14 +741,16 @@ fun WorkerAttendanceLogTool(
                             onValueChange = { viewModel.setAttLeaves(it) },
                             label = { Text(if (isHindi) "वेतनयुक्त छुट्टी (PL/CL)" else "Paid Leaves") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = weeklyOff,
                             onValueChange = { viewModel.setAttWeeklyOff(it) },
                             label = { Text(if (isHindi) "साप्ताहिक छुट्टी (Off)" else "Weekly Off") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
@@ -741,14 +762,16 @@ fun WorkerAttendanceLogTool(
                             onValueChange = { viewModel.setAttHolidays(it) },
                             label = { Text(if (isHindi) "त्योहार अवकाश (Holiday)" else "Festival Holidays") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                         OutlinedTextField(
                             value = totalOtHours,
                             onValueChange = { viewModel.setAttTotalOtHours(it) },
                             label = { Text(if (isHindi) "कुल ओटी घंटे" else "Total OT Hours") },
                             modifier = Modifier.weight(1f),
-                            singleLine = true
+                            singleLine = true,
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
                         )
                     }
 
